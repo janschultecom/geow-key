@@ -41,7 +41,7 @@ public class KeyGenerator implements Serializable {
 	private int precisionBits;
 	
 	/*
-	 * Number of bits used for each precision. Note that the maximum is 64, since it applies twice: lon and lat
+	 * Number of bits used for each precision. Note that the maximum is 32, since it applies twice: lon and lat
 	 */
 	private static final int ULTRA_LOW_PRECISION = 5;
 	private static final int VERY_LOW_PRECISION = 8;
