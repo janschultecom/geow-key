@@ -37,6 +37,8 @@ public class KeyGenerator implements Serializable {
 			.getName());
 
 	private static final int MAX_BITS = 64;
+	private static final int ULTRA_LOW_PRECISION = 5;
+	private static final int VERY_LOW_PRECISION = 8;
 	private static final int LOW_PRECISION = 10;
 	private static final int MEDIUM_PRECISION = 13;
 	private static final int HIGH_PRECISION = 18;
@@ -46,6 +48,8 @@ public class KeyGenerator implements Serializable {
 	private Long maxNumber = 0L;
 
 	public static enum PRECISION {
+		ULTRA_LOW_630KM,
+		VERY_LOW_80KM,
 		LOW_20KM,
 		MEDIUM_5KM,
 		HIGH_100M,
@@ -84,6 +88,10 @@ public class KeyGenerator implements Serializable {
 	public int getNumberOfBits(PRECISION precision) {
 		int myPrecision = 0;
 		switch(precision){
+		case ULTRA_LOW_630KM:
+			myPrecision = ULTRA_LOW_PRECISION;break;
+		case VERY_LOW_80KM:
+			myPrecision = VERY_LOW_PRECISION;break;
 		case LOW_20KM: 
 			myPrecision = LOW_PRECISION;break;
 		case HIGH_100M:
