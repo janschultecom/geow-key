@@ -35,8 +35,14 @@ public class KeyGenerator implements Serializable {
 
 	private static Logger logger = LogManager.getLogger(KeyGenerator.class
 			.getName());
+	
 
 	private static final int MAX_BITS = 64;
+	private int precisionBits;
+	
+	/*
+	 * Number of bits used for each precision. Note that the maximum is 64, since it applies twice: lon and lat
+	 */
 	private static final int ULTRA_LOW_PRECISION = 5;
 	private static final int VERY_LOW_PRECISION = 8;
 	private static final int LOW_PRECISION = 10;
@@ -44,7 +50,7 @@ public class KeyGenerator implements Serializable {
 	private static final int HIGH_PRECISION = 18;
 	private static final int VERY_HIGH_PRECISION = 24;
 	private static final int ULTRA_PRECISION = 30;
-	private int precisionBits;
+	
 	private Long maxNumber = 0L;
 
 	public static enum PRECISION {
